@@ -1,0 +1,43 @@
+{
+    "name": "sebastienheyd/laravel-systempay",
+    "description": "Systempay form generator",
+    "type": "library",
+    "require": {
+        "php": ">=7.1.3",
+        "laravel/framework": "^5.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "squizlabs/php_codesniffer": "^3.0",
+        "orchestra/testbench": "^3.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sébastien HEYD",
+            "email": "contact@sheyd.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sebastienheyd\\Systempay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sebastienheyd\\Systempay\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sebastienheyd\\Systempay\\SystempayServiceProvider"
+            ],
+            "aliases": {
+                "Systempay": "Sebastienheyd\\Systempay\\Facade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
