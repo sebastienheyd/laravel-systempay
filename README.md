@@ -35,14 +35,29 @@ return [
         'site_id' => 'YOUR_SITE_ID',
         'key'     => env('SYSTEMPAY_SITE_KEY', 'YOUR_KEY'),
         'env'     => env('SYSTEMPAY_ENV', 'PRODUCTION'),
-        'algo'    => 'sha256',
     ]
 ];
 ```
 
 You need to set `YOUR_SITE_ID` and `YOUR_KEY` with your own values. This two values are given by Systempay.
 
-These values are set by default :
+### Hashing algorithms
+
+By default, the package will use hmac-sha-256 to generate the signature. To use sha1 you need to set `algo` to `sha1`
+in the configuration :
+
+```php
+return [
+    'default' => [
+        // ...
+        'algo'    => 'sha1'
+    ]
+];
+```
+
+### Specific parameters
+
+These parameters are set by default :
 
 | name | default value | note |
 |---|---|---|
@@ -59,8 +74,6 @@ Also see [Systempay documentation](https://paiement.systempay.fr/doc/fr-FR/form-
 **NB** : you don't have to add the `vads_` prefix to parameters, the prefix will be automaticaly added. 
 But you can also set the parameters with the `vads_` prefix, it will be automaticaly removed.
 
-### Specific parameters
-
 There is also possible to set some specific parameters to a configuration by setting `params` values.
 
 Example :
@@ -69,8 +82,8 @@ Example :
 return [
     'default' => [
         // ...
-        'params'  => [ // Specific parameters for "default" configuration
-            'currency' => '826' // GBP
+        'params'  => [
+            'currency' => '826'
         ]
     ]
 ];

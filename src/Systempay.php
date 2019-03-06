@@ -29,7 +29,7 @@ class Systempay
         }
 
         $this->key = $config['key'];
-        $this->algo = $config['algo'];
+        $this->algo = $config['algo'] ?? 'sha256';
 
         if (!isset($config['params'])) {
             $config['params'] = [];
@@ -62,14 +62,14 @@ class Systempay
     public function set($param, $value = null): self
     {
         if (is_string($param)) {
-            if (empty($value)) {
-                throw new \InvalidArgumentException('Parameter is empty or null');
-            }
-
             $param = [$param => $value];
         }
 
         foreach ($param as $k => $v) {
+            if (empty($v)) {
+                continue;
+            }
+
             if (preg_match('#^vads_#', $k)) {
                 $k = preg_replace('#^vads_#', '', $k);
             }

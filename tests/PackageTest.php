@@ -16,8 +16,11 @@ class MyPackageFunctionTest extends TestCase
 
     public function testNoValue()
     {
-        $this->expectException(\InvalidArgumentException::class);
-        Systempay::set('novalue');
+        $render = Systempay::set('order_info')->set('trans_date', '20170129130025')->render();
+        $this->assertTrue(md5($render) === '7ef696eb91449297e4256fd40a687269');
+
+        $render = Systempay::set('order_info', '')->set('trans_date', '20170129130025')->render();
+        $this->assertTrue(md5($render) === '7ef696eb91449297e4256fd40a687269');
     }
 
     public function testRender()

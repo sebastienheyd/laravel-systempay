@@ -49,7 +49,6 @@ abstract class TestCase extends OrchestraTestCase
                 'site_id' => '12345678',
                 'key'     => '1122334455667788',
                 'env'     => 'TEST',
-                'algo'    => 'sha256',
             ],
             'sha1' => [
                 'site_id' => '12345678',
