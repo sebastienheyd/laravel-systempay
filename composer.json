@@ -1,6 +1,7 @@
 {
     "name": "sebastienheyd/laravel-systempay",
-    "description": "Systempay form generator",
+    "description": "Systempay (Banque Populaire) form generator for Laravel",
+    keywords": [ "laravel", "payment", "pay", "gateway" ],
     "type": "library",
     "require": {
         "php": ">=7.1.3",
