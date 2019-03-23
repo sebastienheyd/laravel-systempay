@@ -1,4 +1,6 @@
-<?php namespace Sebastienheyd\Systempay;
+<?php
+
+namespace Sebastienheyd\Systempay;
 
 use Blade;
 

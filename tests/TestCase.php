@@ -1,29 +1,31 @@
-<?php namespace Sebastienheyd\Systempay\Tests;
+<?php
 
+namespace Sebastienheyd\Systempay\Tests;
+
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sebastienheyd\Systempay\Facade;
 use Sebastienheyd\Systempay\SystempayServiceProvider;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase
 {
     /**
-     * Load package service provider
+     * Load package service provider.
      *
-     * @param  \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Foundation\Application $app
      *
      * @return Sebastienheyd\Systempay\SystempayServiceProvider
      */
     protected function getPackageProviders($app)
     {
         return [
-            SystempayServiceProvider::class
+            SystempayServiceProvider::class,
         ];
     }
 
     /**
-     * Load package alias
+     * Load package alias.
      *
-     * @param  \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Foundation\Application $app
      *
      * @return array
      */
@@ -37,7 +39,7 @@ abstract class TestCase extends OrchestraTestCase
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application $app
+     * @param \Illuminate\Foundation\Application $app
      *
      * @return void
      */
@@ -55,7 +57,7 @@ abstract class TestCase extends OrchestraTestCase
                 'key'     => '1122334455667788',
                 'env'     => 'TEST',
                 'algo'    => 'sha1',
-            ]
+            ],
         ]);
     }
 }
