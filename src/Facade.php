@@ -1,4 +1,6 @@
-<?php namespace Sebastienheyd\Systempay;
+<?php
+
+namespace Sebastienheyd\Systempay;
 
 /**
  * @method static \Sebastienheyd\Systempay\Systempay config(string $config = 'default')
@@ -10,7 +12,7 @@
 class Facade extends \Illuminate\Support\Facades\Facade
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected static function getFacadeAccessor()
     {

@@ -1,4 +1,6 @@
-<?php namespace Sebastienheyd\Systempay;
+<?php
+
+namespace Sebastienheyd\Systempay;
 
 class Systempay
 {
@@ -43,7 +45,7 @@ class Systempay
                 'version'        => 'V2',
                 'currency'       => '978',
                 'site_id'        => $config['site_id'],
-                'ctx_mode'       => $config['env']
+                'ctx_mode'       => $config['env'],
             ]);
 
         return $this;
@@ -53,7 +55,7 @@ class Systempay
      * Set parameter(s). You can do a massive assignement by passing an associative array as $param.
      *
      * @param string|array $param
-     * @param string $value
+     * @param string       $value
      *
      * @return self
      *
@@ -87,12 +89,13 @@ class Systempay
     }
 
     /**
-     * @return string
      * @throws \Exception
+     *
+     * @return string
      */
     private function getSignature(): string
     {
-        $str = join('+', $this->params).'+'.$this->key;
+        $str = implode('+', $this->params).'+'.$this->key;
 
         if ($this->algo === 'sha256') {
             if (!in_array('sha256', hash_hmac_algos())) {
@@ -110,8 +113,9 @@ class Systempay
      *
      * @param string $button
      *
-     * @return string
      * @throws \Exception
+     *
+     * @return string
      */
     public function render(string $button = '<button type="submit">Pay</button>'): string
     {
@@ -127,7 +131,8 @@ class Systempay
 
         $html .= sprintf('<input type="hidden" name="signature" value="%s">', $this->getSignature());
         $html .= $button;
-        $html .= "</form>";
+        $html .= '</form>';
+
         return $html;
     }
 }
