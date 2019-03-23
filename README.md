@@ -1,6 +1,7 @@
 # Systempay form generator for Laravel
 
 ![Package](https://img.shields.io/badge/Package-sebastienheyd%2Flaravel-systempay.svg)
+[![StyleCI](https://github.styleci.io/repos/173969571/shield?branch=master)](https://github.styleci.io/repos/173969571)
 ![Scrutinizer](https://scrutinizer-ci.com/g/sebastienheyd/laravel-systempay/badges/quality-score.png?b=master)
 ![Laravel](https://img.shields.io/badge/For-Laravel%20%E2%89%A5%205.7-lightgrey.svg)
 ![MIT License](https://img.shields.io/github/license/restoore/laravel-systempay.svg)
