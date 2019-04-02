@@ -20,11 +20,11 @@ class SystempayServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function boot()
     {
-        Blade::directive('systempay', function ($var) {
+        Blade::directive('systempay', function($var) {
             return '<?php $c='.(empty($var) ? '"systemPay"' : $var).'; $button = <<<HTML'.PHP_EOL;
         });
 
-        Blade::directive('endsystempay', function () {
+        Blade::directive('endsystempay', function() {
             return PHP_EOL.'HTML;'.PHP_EOL.'echo ${$c}->render($button); ?>';
         });
 
