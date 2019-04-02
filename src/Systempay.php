@@ -68,7 +68,7 @@ class Systempay
         }
 
         foreach ($param as $k => $v) {
-            if ($v !== '0' && empty($v)) {
+            if ($v == null) {
                 continue;
             }
 
