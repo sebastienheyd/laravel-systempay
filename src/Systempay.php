@@ -38,15 +38,15 @@ class Systempay
         }
 
         $this->set($config['params'] + [
-                'amount'         => 0,
-                'page_action'    => 'PAYMENT',
-                'action_mode'    => 'INTERACTIVE',
-                'payment_config' => 'SINGLE',
-                'version'        => 'V2',
-                'currency'       => '978',
-                'site_id'        => $config['site_id'],
-                'ctx_mode'       => $config['env'],
-            ]);
+            'amount'         => 0,
+            'page_action'    => 'PAYMENT',
+            'action_mode'    => 'INTERACTIVE',
+            'payment_config' => 'SINGLE',
+            'version'        => 'V2',
+            'currency'       => '978',
+            'site_id'        => $config['site_id'],
+            'ctx_mode'       => $config['env'],
+        ]);
 
         return $this;
     }
