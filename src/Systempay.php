@@ -46,6 +46,10 @@ class Systempay
             'currency'       => '978',
             'site_id'        => $config['site_id'],
             'ctx_mode'       => $config['env'],
+            'vads_url_success' => route('getPayment'),
+            'vads_url_refused' => route('refusedPayment'),
+            'vads_url_error' => route('errorPayment'),
+            'vads_url_cancel' => route('canceledPayment')
         ]);
 
         return $this;
